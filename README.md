@@ -1,151 +1,175 @@
-# Sales Analytics Dashboard
-
-A Power BI dashboard for analyzing chocolate sales performance across markets, product categories, and sales teams — built to answer where revenue is concentrated, which teams and regions are under/over-performing, and how shipment volume trends over time.
+# Sales Analytics Dashboard | Power BI
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-Data%20Analysis%20Expressions-yellow)
-![Status](https://img.shields.io/badge/status-in%20progress-blue)
+![DAX](https://img.shields.io/badge/DAX-Analytics-4472C4)
+![Power Query](https://img.shields.io/badge/Power%20Query-M-217346)
+![Status](https://img.shields.io/badge/status-completed-2EA44F)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## Overview
+An interactive **Power BI Sales Analytics Dashboard** designed to transform chocolate sales data into actionable business insights across revenue, profitability, products, geography, sales teams, and time-based performance.
 
-This project models and visualizes a chocolate sales dataset (Feb 2023 – Feb 2024) covering 6,113 transactions across 6 countries, 22 products, and 25 sales reps. It's built as a portfolio piece demonstrating star-schema data modeling, DAX time intelligence, and Power BI report design — intended for recruiters, hiring managers, and other analysts reviewing BI/analytics engineering work.
+The project demonstrates **data modeling, DAX measures, time intelligence, interactive reporting, KPI design, and business-focused dashboard development**.
+
+---
+
+## Dashboard Preview
+
+<p align="center">
+  <img src="assets/dashboard-showcase.png" alt="Sales Analytics Dashboard - 8 Page Power BI Showcase" width="100%">
+</p>
+
+> **8-page interactive Power BI dashboard covering executive reporting, sales performance, product analysis, geography, salesperson performance, time intelligence, business insights, and project information.**
+
+---
+
+## Project Overview
+
+This project analyzes a chocolate sales dataset covering **February 2023 to February 2024**.
+
+The dashboard was designed to answer practical business questions such as:
+
+- Where is revenue concentrated?
+- Which products and categories generate the most sales and profit?
+- Which regions are performing best?
+- Which salespeople are driving the strongest results?
+- How are sales and profit changing over time?
+- How does current performance compare with previous periods?
+- Where are the biggest opportunities for business improvement?
+
+The project is structured as a portfolio-ready Power BI solution demonstrating both **technical BI skills and business analysis**.
+
+---
 
 ## Key Metrics
 
 | Metric | Value |
-|---|---|
-| Total Sales | $34,042,511.25 |
-| Total Boxes Shipped | 2,077,844 |
-| Transactions | 6,113 rows |
-| Date Range | Feb 2023 – Feb 2024 |
-| Products | 22 SKUs across 3 categories (Bars, Bites, Other) |
-| Markets | 6 countries — USA, UK, Canada, India, Australia, New Zealand |
-| Regions | Americas, APAC, Europe |
-| Sales Reps | 25, across 4 teams (Yummies, Delish, Jucies, Tempo) |
+|---|---:|
+| **Total Sales** | **$34.04M** |
+| **Total Profit** | **$20.52M** |
+| **Profit Margin** | **60.29%** |
+| **Total Shipments** | **6.11K** |
+| **Boxes Shipped** | **2,077,844** |
+| **Transactions** | **6,113** |
+| **Products** | **22** |
+| **Sales Reps** | **25** |
+| **Markets** | **6 countries** |
+| **Regions** | **3** |
+| **Date Range** | **Feb 2023 – Feb 2024** |
 
-## Dashboard Preview
+### Product Categories
 
-<img width="1536" height="1024" alt="Dashboard Demo images" src="https://github.com/user-attachments/assets/76eb93d3-6e97-4eb6-bd6e-517fa7b88c0e" />
+- Bars
+- Bites
+- Other
 
+### Markets Covered
 
-## Data Model
+- USA
+- UK
+- Canada
+- India
+- Australia
+- New Zealand
 
-The semantic model is a star schema with one fact table, one shared dimension table, and a dedicated date table for time intelligence.
+### Regions
 
-- **Shipment Data** (fact table) — one row per transaction: Sales Person, Geography, Product, Date, Sales ($), Boxes Shipped.
-- **Dimension Data** (lookup table) — attributes for filtering and grouping: Product → Category → Cost per box; Geography → Region; Sales Person → Team.
-- **Calendar Table** — a dedicated 396-day date dimension, marked as the model's date table to support DAX time intelligence functions (e.g. `DATESYTD`, `SAMEPERIODLASTYEAR`).
+- Americas
+- APAC
+- Europe
 
-```
-                 ┌───────────────────┐
-                 │   Calendar Table   │
-                 │   (396-day dim)    │
-                 └─────────┬──────────┘
-                           │ Date
-                           │
-┌────────────────┐   ┌─────▼──────────┐
-│ Dimension Data  ├───┤ Shipment Data   │
-│ (lookup table)  │   │ (fact table)    │
-│                 │   │                 │
-│ Product→Category│   │ Sales Person    │
-│ →Cost per box   │   │ Geography       │
-│ Geography→Region│   │ Product         │
-│ SalesPerson→Team│   │ Date            │
-│                 │   │ Sales ($)       │
-│                 │   │ Boxes Shipped   │
-└─────────────────┘   └─────────────────┘
-```
+### Sales Teams
 
-## Report Pages
+- Yummies
+- Delish
+- Jucies
+- Tempo
 
-Six pages are legible in the dashboard preview. Descriptions below are inferred from the visible chart titles on each page — verify wording against the live report before publishing, and confirm whether the "8 Interactive Pages" claim in the banner refers to two additional pages not shown clearly in the screenshot.
+---
 
-| # | Page | Answers |
+# Report Pages
+
+The report contains **8 interactive pages**, each designed for a specific analytical purpose.
+
+| # | Page | Purpose |
 |---|---|---|
-| 1 | Executive Overview | Top-line KPIs (sales, profit, margin %, shipments, boxes, avg selling price) plus sales trend, sales by product/geography/team, profit by region, and top 10 salespeople — a one-screen performance summary. |
-| 2 | Sales Performance | Monthly sales trend, sales vs. profit, running total sales, month-over-month growth %, top/bottom 10 products, and sales by category. |
-| 3 | Product Analysis | Product count, top products by sales and by profit, a sales-vs-profit scatter, and product contribution % — which SKUs and categories actually drive the numbers. |
-| 4 | Geography Analysis | Sales by country and by region, profit by region, and a regional performance table (sales, profit, margin %, shipments, avg selling price by region). |
-| 5 | Salesperson Performance | Top 10 reps by sales and by profit, a performance scatter plot, and detailed ranking/performance tables against target. |
-| 6 | Time Intelligence | Monthly sales and profit trends, sales vs. previous year, running total sales, and a monthly performance breakdown — YoY and growth-rate views. |
+| **01** | **Executive Overview** | High-level KPIs and overall sales, profit, shipment, product, geography, and salesperson performance. |
+| **02** | **Sales Performance** | Sales trends, profit performance, growth analysis, running totals, product rankings, and category performance. |
+| **03** | **Product Analysis** | Product-level sales, profit, contribution, margin, and performance comparison. |
+| **04** | **Geography Analysis** | Regional and geographic sales, profit, margin, shipment, and performance analysis. |
+| **05** | **Salesperson Performance** | Salesperson rankings, sales and profit performance, target analysis, and detailed performance comparisons. |
+| **06** | **Time Intelligence** | Monthly trends, year-over-year comparisons, running totals, growth analysis, and monthly performance. |
+| **07** | **Insights & Recommendations** | Key business insights, performance highlights, and actionable recommendations derived from the analysis. |
+| **08** | **About & Information** | Project overview, dataset scope, analytics coverage, tools, technologies, and dashboard navigation. |
 
-*[Fill in: replace inferred descriptions with your own if they don't match the actual page content, and add any pages beyond these 6.]*
+---
 
-## Key DAX Measures
+# Data Model
 
-*[Fill in: paste the actual DAX measures used in the model. Do not use the examples below as-is — they are structural placeholders only, not verified code from this project.]*
+The Power BI semantic model follows a **star-schema approach** with a central fact table, supporting dimension data, and a dedicated calendar table.
 
-```dax
-Total Sales = [Fill in: actual measure formula]
+### Fact Table
 
-Total Boxes Shipped = [Fill in: actual measure formula]
+**Shipment Data**
 
-Sales YoY % = [Fill in: actual measure formula]
+Contains transactional sales information including:
 
-Avg Cost per Box = [Fill in: actual measure formula]
-```
+- Sales Person
+- Geography
+- Product
+- Date
+- Sales
+- Boxes Shipped
 
-## Interactivity
+### Dimension Data
 
-*[Fill in: describe the actual interactive features implemented in the report, e.g.:]*
-- **Slicers:** [Fill in: which fields — e.g. Region, Category, Date range]
-- **Drill-through:** [Fill in: which page(s) support drill-through, and from where]
-- **Bookmarks:** [Fill in: what states/views are bookmarked, if any]
-- **Tooltips:** [Fill in: custom tooltip pages or default tooltips]
+**Dimension Data**
 
-## Tech Stack
+Provides descriptive attributes used for filtering and analysis:
 
-- **Power BI Desktop** — report authoring (PBIP project format)
-- **DAX** — measures and calculated columns
-- **Power Query (M)** — data transformation and shaping
-- **Excel** — source data
+- Product
+- Category
+- Cost per Box
+- Geography
+- Region
+- Sales Person
+- Team
 
-## Getting Started
+### Date Dimension
 
-1. **Clone the repository**
-   ```bash
-   git clone <repo-url>
-   cd Sales-Analytics-Dashboard
-   ```
-2. **Open the project** — launch Power BI Desktop and open `Sales Analytics Dashboard.pbip`. This requires the [PBIP preview feature](https://learn.microsoft.com/power-bi/developer/projects/projects-overview) enabled in Power BI Desktop (File → Options → Preview features → Power BI Project (.pbip) save option).
-3. **Repoint the data source** — the model reads from the source Excel file (`ac-sample-data.xlsx`). In Power Query Editor (Transform data), update the file path parameter to point to your local copy of the workbook.
-4. **Refresh** — click Refresh on the Home ribbon to reload data from the repointed source.
+**Calendar Table**
 
-## Repository Structure
+A dedicated date table used to support time-intelligence calculations such as:
 
-```
-Sales-Analytics-Dashboard/
-├── Sales Analytics Dashboard.pbip
-├── Sales Analytics Dashboard.Report/
-│   ├── definition/
-│   ├── StaticResources/
-│   └── report.json
-├── Sales Analytics Dashboard.SemanticModel/
-│   ├── definition/
-│   │   ├── tables/
-│   │   ├── relationships.tmdl
-│   │   └── model.tmdl
-│   └── model.bim
-├── data/
-│   └── ac-sample-data.xlsx
-├── assets/
-│   └── dashboard-screenshot.png
-└── README.md
-```
+- Year-over-Year analysis
+- Previous-period comparisons
+- Running totals
+- Monthly growth
+- Date-based filtering
 
-## Key Insights
+### Model Structure
 
-*[Fill in: 2-4 real findings drawn from analyzing the report, e.g. top-performing region, best-selling category, seasonal trend, or a rep/team performance gap. Each should be a specific, checkable claim, not a generic statement.]*
-
-- [Fill in: insight 1]
-- [Fill in: insight 2]
-- [Fill in: insight 3]
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
-## About the Developer
-**Khusi Khanra**
-https://github.com/khusikhanra
+```text
+                    ┌─────────────────────┐
+                    │   Calendar Table    │
+                    │                     │
+                    │ Date                │
+                    │ Month               │
+                    │ Year                │
+                    │ Month Number        │
+                    └──────────┬──────────┘
+                               │
+                               │ Date
+                               │
+┌─────────────────────┐   ┌────▼────────────────┐
+│   Dimension Data    │   │    Shipment Data    │
+│                     │   │                     │
+│ Product             │   │ Sales Person        │
+│ Category            │   │ Geography           │
+│ Cost per Box        │   │ Product             │
+│ Geography           │   │ Date                │
+│ Region              │   │ Sales               │
+│ Sales Person        │   │ Boxes Shipped       │
+│ Team                │   │                     │
+└──────────┬──────────┘   └─────────────────────┘
+           │
+           └────────────── Relationships
