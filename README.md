@@ -14,9 +14,8 @@ The project demonstrates **data modeling, DAX measures, time intelligence, inter
 
 ## Dashboard Preview
 
-<p align="center">
-  <img src="assets/dashboard-showcase.png" alt="Sales Analytics Dashboard - 8 Page Power BI Showcase" width="100%">
-</p>
+<img width="1536" height="1024" alt="Dashboard Demo images" src="https://github.com/user-attachments/assets/638bd5d9-6a44-4dd0-84a2-878ba7dbb081" />
+
 
 > **8-page interactive Power BI dashboard covering executive reporting, sales performance, product analysis, geography, salesperson performance, time intelligence, business insights, and project information.**
 
