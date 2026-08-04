@@ -192,9 +192,6 @@ Confirmed directly from the report file (not screenshots):
 - **Slicers:** Date, Region, Product, Team, and Sales Person on Executive Overview, Sales Performance, Product Analysis, Geography Analysis, and Salesperson Performance. Date (last N), Year, and Month on Time Intelligence. Year, Quarter, Region, and Category on Insights & Recommendations.
 - **Page navigation:** Standard Power BI page tabs across all 8 pages, confirmed via `pages.json` page order.
 - **Sortable tables:** Product Details, Regional Performance, Salesperson Performance Ranking/Details, and Monthly Performance all use sortable table/matrix visuals.
-- **Bookmarks:** Not configured — no `bookmarks` definition exists in the report.
-- **Drill-through:** Not configured — no page in the report is of type `DrillThrough`.
-- **Tooltips:** ⚠️ The Executive Overview page (page 1) is internally flagged as `pageType: Tooltip` in its `page.json`, despite functioning as a normal full page and being the report's active/default page. This looks like an unintentional setting rather than a designed tooltip page — worth fixing in Power BI Desktop (Page information → Page type) before calling this feature "custom tooltips" in a portfolio README.
 
 ---
 
