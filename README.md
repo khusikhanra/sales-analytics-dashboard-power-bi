@@ -148,7 +148,6 @@ Sales-Analytics-Dashboard/
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-## Developer 
-
+## About the Developer
 **Khusi Khanra**
-[Fill in: contact info — email, LinkedIn, portfolio site, etc.]
+https://github.com/khusikhanra
