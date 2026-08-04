@@ -26,7 +26,8 @@ This project models and visualizes a chocolate sales dataset (Feb 2023 – Feb 2
 
 ## Preview
 
-![Sales Analytics Dashboard Screenshot](assets/dashboard-screenshot.png)
+![Sales Analytics Dashboard Screenshot](<img width="1536" height="1024" alt="Dashboard Demo images" src="https://github.com/user-attachments/assets/696fb654-a4da-44e2-be96-ff2d14d7ec03" />
+)
 
 *[Fill in: the header on this composite graphic says "8 Interactive Pages," but only 6 distinct pages are legible in the image (see Report Pages below) — reconcile that count, and swap in a GIF walkthrough if you have one: `![Dashboard Demo](assets/dashboard-demo.gif)`.]*
 
@@ -147,7 +148,7 @@ Sales-Analytics-Dashboard/
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-## Author
+## Developer 
 
 **Khusi Khanra**
 [Fill in: contact info — email, LinkedIn, portfolio site, etc.]
