@@ -31,7 +31,7 @@ The project demonstrates **data modeling, DAX measures, time intelligence, inter
 
 ## Dashboard Preview
 
-<img width="1536" height="1024" alt="Dashboard Demo images" src="https://github.com/user-attachments/assets/638bd5d9-6a44-4dd0-84a2-878ba7dbb081" />
+<img width="1536" height="1024" alt="Sales Analytics Dashboard - 8 Page Showcase" src="https://github.com/user-attachments/assets/638bd5d9-6a44-4dd0-84a2-878ba7dbb081" />
 
 > **8-page interactive Power BI dashboard covering executive reporting, sales performance, product analysis, geography, salesperson performance, time intelligence, business insights, and project information.**
 
@@ -51,7 +51,6 @@ The dashboard was designed to answer practical business questions such as:
 - How does current performance compare with previous periods?
 - Where are the biggest opportunities for business improvement?
 
-
 ---
 
 ## Key Metrics
@@ -61,9 +60,8 @@ The dashboard was designed to answer practical business questions such as:
 | **Total Sales** | **$34.04M** |
 | **Total Profit** | **$20.52M** |
 | **Profit Margin** | **60.29%** |
-| **Total Shipments** | **6.11K** |
+| **Total Transactions** | **6,113** |
 | **Boxes Shipped** | **2,077,844** |
-| **Transactions** | **6,113** |
 | **Products** | **22** |
 | **Sales Reps** | **25** |
 | **Markets** | **6 countries** |
@@ -181,28 +179,31 @@ A dedicated date table used to support time-intelligence calculations such as:
 └──────────┬──────────┘   └─────────────────────┘
            │
            └────────────── Relationships
-
+```
 
 ---
 
 ## Interactivity
 
-Confirmed directly from the report file (not screenshots):
+Confirmed directly from the report file:
 
-- **Slicers:** Date, Region, Product, Team, and Sales Person on Executive Overview, Sales Performance, Product Analysis, Geography Analysis, and Salesperson Performance. Date (last N), Year, and Month on Time Intelligence. Year, Quarter, Region, and Category on Insights & Recommendations.
-- **Page navigation:** Standard Power BI page tabs across all 8 pages, confirmed via `pages.json` page order.
-- **Sortable tables:** Product Details, Regional Performance, Salesperson Performance Ranking/Details, and Monthly Performance all use sortable table/matrix visuals.
+- **Slicers:** Date, Region, Product, Team, and Sales Person on Executive Overview, Sales Performance, Product Analysis, Geography Analysis, and Salesperson Performance.
+- **Time Intelligence filters:** Date (Last N), Year, and Month.
+- **Insights & Recommendations filters:** Year, Quarter, Region, and Category.
+- **Page navigation:** Standard Power BI page tabs across all 8 pages.
+- **Sortable tables:** Product Details, Regional Performance, Salesperson Performance Ranking, Salesperson Performance Details, and Monthly Performance tables.
 
 ---
 
 ## Key Insights
 
-Verified against the underlying charts (see note below on excluded items):
+The dashboard highlights several important business findings:
 
-- **APAC is the strongest region by profitability** — 61.78% profit margin vs. 59.49% (Americas) and 57.25% (Europe), per the Regional Performance table on Geography Analysis.
-- **New Zealand is the top-selling individual market** at ~$5.9M in sales, narrowly ahead of Canada and Australia (~$5.7M each), despite APAC and Americas being the stronger *regions* overall — worth noting since regional and country-level rankings diverge.
-- **Organic Choco Syrup is the top individual product**, both in sales ($2.1M) and reported profit ($1.38M per the Insights page product card), consistent with its #1 ranking in Top 10 Products by Sales on both Sales Performance and Product Analysis.
-- **Profit margin (60.29%) is high relative to typical CPG benchmarks**, driven by category mix — Bars leads categories at ~50% of total sales per the Product Analysis category donut.
+- **APAC is the strongest region by profitability**, with a **61.78% profit margin**, compared with 59.49% for Americas and 57.25% for Europe.
+- **New Zealand is the top-selling individual market**, generating approximately **$5.9M in sales**, narrowly ahead of Canada and Australia.
+- **Organic Choco Syrup is the top individual product**, generating approximately **$2.1M in sales** and reported profit of approximately **$1.38M**.
+- **Bars is the highest-profit category**, generating approximately **$10.40M in profit** with a **60.87% profit margin**.
+- Overall dashboard performance shows **$34.04M in sales**, **$20.52M in profit**, and a **60.29% profit margin** across the analyzed period.
 
 ---
 
@@ -210,24 +211,52 @@ Verified against the underlying charts (see note below on excluded items):
 
 | Tool | Purpose |
 |---|---|
-| **Power BI Desktop** | Report authoring (.pbix format), data visualization, and dashboarding |
-| **DAX** | Measures, calculations, and data analysis |
+| **Power BI Desktop** | Report authoring, data visualization, and dashboard development |
+| **DAX** | Measures, calculations, KPIs, and time intelligence |
 | **Power Query (M)** | Data transformation and shaping |
 | **Excel** | Source data preparation and cleaning |
-| **Data Modeling** | Star schema design and table relationships |
+| **Data Modeling** | Star-schema design and table relationships |
 
 ---
 
 ## Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone <repo-url>
-   cd Sales-Analytics-Dashboard
-   ```
-2. **Open the file** — launch Power BI Desktop and open `Sales Analytics Dashboard.pbix` directly. No preview features or extra setup needed — `.pbix` is a single self-contained file with the report and data model bundled together.
-3. **Repoint the data source** — the model reads from the source Excel file. In Power Query Editor (Transform Data), update the file path parameter to point to your local copy of the workbook.
-4. **Refresh** — click Refresh on the Home ribbon to reload data from the repointed source.
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/khusikhanra/sales-analytics-dashboard-power-bi.git
+cd sales-analytics-dashboard-power-bi
+```
+
+### 2. Open the Power BI Report
+
+Launch **Power BI Desktop** and open:
+
+```text
+Sales Analytics Dashboard.pbix
+```
+
+The `.pbix` file contains the report, visuals, semantic model, and Power BI configuration required to explore the dashboard.
+
+### 3. Update the Data Source
+
+The report uses the source Excel dataset.
+
+If the Excel file path differs on your machine:
+
+1. Open **Power BI Desktop**.
+2. Select **Transform Data**.
+3. Open **Power Query Editor**.
+4. Update the source file path to your local Excel file.
+5. Apply the changes.
+
+### 4. Refresh the Report
+
+After updating the source path:
+
+**Home → Refresh**
+
+This reloads the data and updates the dashboard visuals.
 
 ---
 
@@ -242,13 +271,15 @@ Sales-Analytics-Dashboard/
 │   └── dashboard-screenshot.png
 ├── LICENSE
 └── README.md
-
+```
 
 ---
 
 ## License
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+This project is licensed under the **MIT License**.
+
+See the [`LICENSE`](LICENSE) file for details.
 
 ---
 
