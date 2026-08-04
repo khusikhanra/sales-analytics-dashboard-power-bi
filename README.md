@@ -173,3 +173,15 @@ A dedicated date table used to support time-intelligence calculations such as:
 └──────────┬──────────┘   └─────────────────────┘
            │
            └────────────── Relationships
+
+---
+
+# About the Developer
+
+**Khusi Khanra**
+
+Data Analyst focused on transforming business data into clear, actionable insights using **SQL, Excel, Power BI, DAX, and Python**.
+
+### Connect
+
+- **GitHub:** [@khusikhanra](https://github.com/khusikhanra)
