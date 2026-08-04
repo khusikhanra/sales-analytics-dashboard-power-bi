@@ -29,8 +29,6 @@ This project models and visualizes a chocolate sales dataset (Feb 2023 – Feb 2
 <img width="1536" height="1024" alt="Dashboard Demo images" src="https://github.com/user-attachments/assets/76eb93d3-6e97-4eb6-bd6e-517fa7b88c0e" />
 
 
-*[Fill in: the header on this composite graphic says "8 Interactive Pages," but only 6 distinct pages are legible in the image (see Report Pages below) — reconcile that count, and swap in a GIF walkthrough if you have one: `![Dashboard Demo](assets/dashboard-demo.gif)`.]*
-
 ## Data Model
 
 The semantic model is a star schema with one fact table, one shared dimension table, and a dedicated date table for time intelligence.
