@@ -189,26 +189,26 @@ A dedicated date table used to support time-intelligence calculations such as:
 
 ## Key DAX Measures
 
-Measure **names** below are confirmed from the KPI cards across all 8 report pages. Formulas are not visible in a static screenshot — paste the actual DAX from Power BI Desktop before publishing; do not reuse the placeholder syntax below as real code.
+Measure **names** 
 
 ```dax
-Total Sales = [Fill in: actual measure formula]
-Total Profit = [Fill in: actual measure formula]
-Profit Margin % = [Fill in: actual measure formula]
-Total Shipments = [Fill in: actual measure formula]
-Total Boxes = [Fill in: actual measure formula]
-Average Selling Price = [Fill in: actual measure formula]
-Total Products = [Fill in: actual measure formula]
-Total Salespersons = [Fill in: actual measure formula]
-Total Countries = [Fill in: actual measure formula]
-Sales Growth % = [Fill in: actual measure formula]
-Profit Growth % = [Fill in: actual measure formula]
-Running Total Sales = [Fill in: actual measure formula, e.g. CALCULATE + ALLSELECTED]
-Monthly Growth % = [Fill in: actual measure formula]
-Target Achievement % = [Fill in: actual measure formula]
-Sales Comparison vs PY = [Fill in: actual measure formula]
-Profit Comparison vs PY = [Fill in: actual measure formula]
-Shipments Growth % = [Fill in: actual measure formula]
+Total Sales 
+Total Profit 
+Profit Margin %
+Total Shipments 
+Total Boxes
+Average Selling Price
+Total Products 
+Total Salespersons 
+Total Countries 
+Sales Growth %
+Profit Growth % 
+Running Total Sales
+Monthly Growth % 
+Target Achievement % 
+Sales Comparison vs PY 
+Profit Comparison vs PY 
+Shipments Growth %
 ```
 
 ---
@@ -221,11 +221,6 @@ Confirmed directly from the report (not placeholders):
 - **Page navigation:** Standard Power BI page tabs across all 8 pages.
 - **Sortable tables:** Product Details (Product Analysis), Regional Performance (Geography Analysis), Salesperson Performance Ranking / Details (Salesperson Performance), and Monthly Performance (Time Intelligence) all show sortable column headers.
 
-*[Fill in: not visible in the screenshots reviewed — confirm and add if present:]*
-- **Drill-through:** [Fill in: no drill-through menus were visible in the reviewed screenshots — add if configured]
-- **Bookmarks:** [Fill in: no bookmark controls were visible — add if configured]
-- **Custom tooltips:** [Fill in: no custom tooltip pages were visible — add if configured]
-
 ---
 
 ## Key Insights
@@ -237,7 +232,6 @@ Verified against the underlying charts (see note below on excluded items):
 - **Organic Choco Syrup is the top individual product**, both in sales ($2.1M) and reported profit ($1.38M per the Insights page product card), consistent with its #1 ranking in Top 10 Products by Sales on both Sales Performance and Product Analysis.
 - **Profit margin (60.29%) is high relative to typical CPG benchmarks**, driven by category mix — Bars leads categories at ~50% of total sales per the Product Analysis category donut.
 
-*[Fill in / verify before publishing: the "Insights & Recommendations" page also lists "Top Performing Region: North," "Best Salesperson: Sean Miller," and "Best Sales Month: December 2023" — these don't reconcile with the region list (APAC/Americas/Europe), the Top 10 Salespersons lists, or the Monthly Sales Trend chart (which shows November 2023, not December, as the peak month) elsewhere in the report. Recommend re-checking whether that page's Key Business Insights panel is bound to live measures or contains static/template text before using those specific figures.]*
 
 ---
 
@@ -288,10 +282,6 @@ Sales-Analytics-Dashboard/
 └── README.md
 ```
 
-*[Fill in: confirm this matches your actual repo layout once the `.Report` and `.SemanticModel` folders are committed.]*
-
----
-
 ## License
 
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
@@ -302,7 +292,7 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for d
 
 **Khusi Khanra**
 
-Data Analyst focused on transforming business data into clear, actionable insights using **SQL, Excel, Power BI, DAX, and Python**.
+Data Analyst focused on transforming business data into clear, actionable insights using **SQL, Excel, Power BI, DAX**.
 
 ### Connect
 
