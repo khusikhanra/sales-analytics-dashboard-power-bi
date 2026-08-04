@@ -19,7 +19,6 @@ The project demonstrates **data modeling, DAX measures, time intelligence, inter
 - [Key Metrics](#key-metrics)
 - [Report Pages](#report-pages)
 - [Data Model](#data-model)
-- [Key DAX Measures](#key-dax-measures)
 - [Interactivity](#interactivity)
 - [Key Insights](#key-insights)
 - [Tech Stack](#tech-stack)
@@ -52,7 +51,6 @@ The dashboard was designed to answer practical business questions such as:
 - How does current performance compare with previous periods?
 - Where are the biggest opportunities for business improvement?
 
-The project is structured as a portfolio-ready Power BI solution demonstrating both **technical BI skills and business analysis**.
 
 ---
 
@@ -183,43 +181,20 @@ A dedicated date table used to support time-intelligence calculations such as:
 └──────────┬──────────┘   └─────────────────────┘
            │
            └────────────── Relationships
-```
 
----
-
-## Key DAX Measures
-
-Measure **names** 
-
-```dax
-Total Sales 
-Total Profit 
-Profit Margin %
-Total Shipments 
-Total Boxes
-Average Selling Price
-Total Products 
-Total Salespersons 
-Total Countries 
-Sales Growth %
-Profit Growth % 
-Running Total Sales
-Monthly Growth % 
-Target Achievement % 
-Sales Comparison vs PY 
-Profit Comparison vs PY 
-Shipments Growth %
-```
 
 ---
 
 ## Interactivity
 
-Confirmed directly from the report (not placeholders):
+Confirmed directly from the report file (not screenshots):
 
-- **Slicers:** Date, Region, Product, Team, and Sales Person on the Executive Overview, Sales Performance, Product Analysis, Geography Analysis, and Salesperson Performance pages. Date (last N), Year, and Month on the Time Intelligence page. Year, Quarter, Region, and Category on the Insights & Recommendations page.
-- **Page navigation:** Standard Power BI page tabs across all 8 pages.
-- **Sortable tables:** Product Details (Product Analysis), Regional Performance (Geography Analysis), Salesperson Performance Ranking / Details (Salesperson Performance), and Monthly Performance (Time Intelligence) all show sortable column headers.
+- **Slicers:** Date, Region, Product, Team, and Sales Person on Executive Overview, Sales Performance, Product Analysis, Geography Analysis, and Salesperson Performance. Date (last N), Year, and Month on Time Intelligence. Year, Quarter, Region, and Category on Insights & Recommendations.
+- **Page navigation:** Standard Power BI page tabs across all 8 pages, confirmed via `pages.json` page order.
+- **Sortable tables:** Product Details, Regional Performance, Salesperson Performance Ranking/Details, and Monthly Performance all use sortable table/matrix visuals.
+- **Bookmarks:** Not configured — no `bookmarks` definition exists in the report.
+- **Drill-through:** Not configured — no page in the report is of type `DrillThrough`.
+- **Tooltips:** ⚠️ The Executive Overview page (page 1) is internally flagged as `pageType: Tooltip` in its `page.json`, despite functioning as a normal full page and being the report's active/default page. This looks like an unintentional setting rather than a designed tooltip page — worth fixing in Power BI Desktop (Page information → Page type) before calling this feature "custom tooltips" in a portfolio README.
 
 ---
 
@@ -232,14 +207,13 @@ Verified against the underlying charts (see note below on excluded items):
 - **Organic Choco Syrup is the top individual product**, both in sales ($2.1M) and reported profit ($1.38M per the Insights page product card), consistent with its #1 ranking in Top 10 Products by Sales on both Sales Performance and Product Analysis.
 - **Profit margin (60.29%) is high relative to typical CPG benchmarks**, driven by category mix — Bars leads categories at ~50% of total sales per the Product Analysis category donut.
 
-
 ---
 
 ## Tech Stack
 
 | Tool | Purpose |
 |---|---|
-| **Power BI Desktop** | Report authoring (PBIP project format), data visualization, and dashboarding |
+| **Power BI Desktop** | Report authoring (.pbix format), data visualization, and dashboarding |
 | **DAX** | Measures, calculations, and data analysis |
 | **Power Query (M)** | Data transformation and shaping |
 | **Excel** | Source data preparation and cleaning |
@@ -254,7 +228,7 @@ Verified against the underlying charts (see note below on excluded items):
    git clone <repo-url>
    cd Sales-Analytics-Dashboard
    ```
-2. **Open the project** — launch Power BI Desktop and open `Sales Analytics Dashboard.pbip`. This requires the [PBIP preview feature](https://learn.microsoft.com/power-bi/developer/projects/projects-overview) enabled (File → Options → Preview features → Power BI Project (.pbip) save option).
+2. **Open the file** — launch Power BI Desktop and open `Sales Analytics Dashboard.pbix` directly. No preview features or extra setup needed — `.pbix` is a single self-contained file with the report and data model bundled together.
 3. **Repoint the data source** — the model reads from the source Excel file. In Power Query Editor (Transform Data), update the file path parameter to point to your local copy of the workbook.
 4. **Refresh** — click Refresh on the Home ribbon to reload data from the repointed source.
 
@@ -264,23 +238,16 @@ Verified against the underlying charts (see note below on excluded items):
 
 ```text
 Sales-Analytics-Dashboard/
-├── Sales Analytics Dashboard.pbip
-├── Sales Analytics Dashboard.Report/
-│   ├── definition/
-│   ├── StaticResources/
-│   └── report.json
-├── Sales Analytics Dashboard.SemanticModel/
-│   ├── definition/
-│   │   ├── tables/
-│   │   ├── relationships.tmdl
-│   │   └── model.tmdl
-│   └── model.bim
+├── Sales Analytics Dashboard.pbix
 ├── data/
 │   └── ac-sample-data.xlsx
 ├── assets/
 │   └── dashboard-screenshot.png
+├── LICENSE
 └── README.md
-```
+
+
+---
 
 ## License
 
@@ -292,7 +259,7 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for d
 
 **Khusi Khanra**
 
-Data Analyst focused on transforming business data into clear, actionable insights using **SQL, Excel, Power BI, DAX**.
+Data Analyst focused on transforming business data into clear, actionable insights using **SQL, Excel, Power BI, DAX, and Python**.
 
 ### Connect
 
