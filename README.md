@@ -24,7 +24,7 @@ This project models and visualizes a chocolate sales dataset (Feb 2023 – Feb 2
 | Regions | Americas, APAC, Europe |
 | Sales Reps | 25, across 4 teams (Yummies, Delish, Jucies, Tempo) |
 
-## Preview
+## Dashboard Preview
 
 <img width="1536" height="1024" alt="Dashboard Demo images" src="https://github.com/user-attachments/assets/76eb93d3-6e97-4eb6-bd6e-517fa7b88c0e" />
 
